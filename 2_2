@@ -1,0 +1,10 @@
+a = input ('Input number...')
+a = int (a)
+if a>=1 and a<=27 and a%2 == 0:
+    print ('In first range')
+elif a%2 == 0:
+    print ('Odd')
+elif a>=29 and a<=53 and a%2 != 0:
+    print ('In second range')
+else:
+    print ('It\'s something')
