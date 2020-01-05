@@ -1,0 +1,13 @@
+try:
+    a = input ('Input number 1...')
+    a = float (a)
+    b = input ('Input number 2...')
+    b = float (b)
+except ValueError:
+    print ('You chose the wrong value!')
+c = int (a+b)
+print (c)
+d = b-a
+print (d)
+e = a + b
+print (e)
