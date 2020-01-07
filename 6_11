@@ -1,0 +1,8 @@
+def numb (n):
+    if n == 0:
+        return list[n]
+    else:
+        return list[n] * numb(n - 1)
+
+list = [42, 72, 113]
+print (numb(len(list) - 1))
