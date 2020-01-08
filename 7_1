@@ -1,0 +1,17 @@
+import re
+
+def st (s):
+    s = str (s)
+    a = s.split()
+    print (a[0])
+
+    smth = ['Say']
+    for sm in smth:
+        match = re.search (sm, s)
+    if match:
+        print ('Match: Say')
+    else:
+        print ('No matches found')
+    return (a)
+
+st ('Say something to me')
