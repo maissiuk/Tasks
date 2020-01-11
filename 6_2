@@ -1,0 +1,8 @@
+def smth (first, second):
+    if first in second.values():
+        print ('True')
+    else:
+        print ('False')
+
+bbb = smth (5, {'foo': 5, 'bar': 8})
+print (smth)

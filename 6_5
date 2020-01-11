@@ -1,0 +1,23 @@
+def letters (str):
+    up = 0
+    low = 0
+    sp = 0
+    punc = 0
+    for i in str :
+        if 'a' <= i <= 'z':
+            low += 1
+        elif 'A' <= i <= 'Z':
+            up += 1
+        elif i == ' ':
+            sp += 1
+        else:
+            punc += 1
+    return [low, up, sp, punc]
+
+letters ('str')
+a = letters ('Hello, Wolrd!')
+print('Lower:', a[0])
+print('Upper:', a[1])
+print('Space:', a[2])
+print('Punctuation:', a[3])
+

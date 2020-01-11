@@ -1,0 +1,10 @@
+def mirror (a):
+    if a == str(a)[::-1]:
+        return (True)
+        print ('True')
+    else:
+        return (False)
+        print ('False')
+
+b = mirror ('radar')
+print (b)
