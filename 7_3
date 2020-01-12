@@ -1,0 +1,9 @@
+import re
+
+def domen(s):
+    s = str(s)
+    result = re.findall(r'@\w+.\w+',s)
+    print(result)
+    return (result)
+
+domen (['baveja@att.net', 'mhassel@comcast.net', 'heine@sbcglobal.net', 'gbacon@comcast.net', 'slaff@hotmail.com', 'seemant@yahoo.com', 'miltchev@verizon.net', 'ducasse@hotmail.com', 'chaikin@yahoo.ca', 'agolomsh@yahoo.ca', 'joehall@msn.com', 'ilikered@optonline.net'])
