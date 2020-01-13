@@ -1,0 +1,11 @@
+import re
+
+def st (s):
+    s = str (s)
+    a = s[0:3]
+    print (a)
+
+    smth = re.findall(r'\w\w\w',s)
+    print (smth)
+
+st ('fck')
