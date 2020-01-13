@@ -1,0 +1,11 @@
+def st(s):
+    s = s.split()
+    s.reverse()
+    s2 = ""
+    for i in s:
+        s2 += i + ' '
+    return s2
+
+a = ('never give up')
+a = st(a)
+print(a)
