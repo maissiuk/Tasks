@@ -1,0 +1,7 @@
+def st (s):
+    s = str (s)
+    b = s.replace (' ', '-')
+    return (b)
+
+
+print (st ('Hello World'))
