@@ -1,0 +1,7 @@
+def st (s):
+    s = s[:1] + 'i' + s[1+1:]
+    b = s.replace ('i', 'a')
+    return (b)
+
+
+print (st('Hello World'))
