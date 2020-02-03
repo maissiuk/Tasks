@@ -1,0 +1,19 @@
+from dataclasses import dataclass
+import typing
+
+@dataclass
+class Student:
+    name: str
+    average_mark: float
+    age: int = 18
+    subjects: typing.List[str] = 0
+
+    def marks(self, stud):
+        """Сравнение и сортировка студентов по среднему баллу"""
+        return (self.average_mark == stud.average_mark)
+
+student_1 = Student('Amanda', 8)
+student_2 = Student('John', 10)
+print(student_1.name, student_1.average_mark)
+print(student_2.name, student_2.average_mark)
+print(student_1.marks(student_2))
