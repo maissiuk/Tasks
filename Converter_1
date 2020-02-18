@@ -1,0 +1,100 @@
+import requests
+
+sup = {
+        'AUD': 'Australian dollar',
+        'BGN': 'Bulgarian lev',
+        'UAH': 'Ukrainian hryvnia',
+        'DKK': 'Danish krone',
+        'USD': 'United States Dollar',
+        'EUR': 'European euro',
+        'PLN': 'Polish złoty',
+        'IRR': 'Iranian rial',
+        'ISK': 'Icelandic króna',
+        'JPY': 'Japanese yen',
+        'CAD': 'Canadian Dollar',
+        'CNY': 'Chinese yuan',
+        'KWD': 'Kuwaiti dinar',
+        'MDL': 'Moldovan leu',
+        'NZD': 'New Zealand dollar',
+        'NOK': 'Norwegian krone',
+        'RUB': 'Russian ruble',
+        'XDR': 'Special drawing rights',
+        'SGD': 'Singapore dollar',
+        'KGS': 'Kyrgyzstani som',
+        'KZT': 'Kazakhstani tenge',
+        'TRY': 'Turkish lira',
+        'GBP': 'Pound sterling',
+        'CZK': 'Czech koruna',
+        'SEK': 'Swedish krona',
+        'CHF': 'Swiss franc'
+}
+
+cur = {
+        170: 'AUD',
+        191: 'BGN',
+        290: 'UAH',
+        291: 'DKK',
+        145: 'USD',
+        292: 'EUR',
+        293: 'PLN',
+        303: 'IRR',
+        294: 'ISK',
+        295: 'JPY',
+        23: 'CAD',
+        304: 'CNY',
+        72: 'KWD',
+        296: 'MDL',
+        286: 'NZD',
+        297: 'NOK',
+        298: 'RUB',
+        299: 'XDR',
+        119: 'SGD',
+        300: 'KGS',
+        301: 'KZT',
+        302: 'TRY',
+        143: 'GBP',
+        305: 'CZK',
+        306: 'SEK',
+        130: 'CHF'
+
+    }
+
+if __name__ == '__main__':
+    print('Currency Converter')
+
+    supported_cur = sup
+    print('List of supported currencies:')
+    for key in sup:
+        print("%s - %s" % (key, sup[key]))
+
+    text = int(input('Enter currency amount:'))
+    print('List of currencies number:')
+    for key in cur:
+        print("%s - %s" % (key, cur[key]))
+
+    while True:
+        source_cur = int(input('Enter number of source currency:'))
+        if source_cur in cur.keys():
+            break
+        else:
+            print('Please, check the entered value')
+    while True:
+        final_cur = int(input('Enter number of final currency:'))
+        if final_cur in cur.keys():
+            break
+        else:
+            print('Please, check the entered value')
+
+    req = 'http://www.nbrb.by/API/ExRates/Rates/' + str(source_cur)
+    response = requests.get(req)
+    val = response.json()
+
+    another = 'http://www.nbrb.by/API/ExRates/Rates/' + str(final_cur)
+    response = requests.get(another)
+    fin = response.json()
+
+    val_cur = val['Cur_OfficialRate']/val['Cur_Scale']
+    fin_cur = fin['Cur_OfficialRate']/fin['Cur_Scale']
+    exchange = (val_cur/fin_cur)
+    ex = round((exchange * text), 2)
+    print(ex)
